@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encoder/Decoder Tool</title> <!-- Page Title -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Encoder/Decoder</h1>
+        
+        <!-- Method Selector -->
+        <h2>Choose Method</h2>
+        <select id="method">
+            <option value="base64">Base64</option>
+            <option value="hex">Hex</option>
+            <option value="url">URL</option>
+            <option value="des">DES</option>
+            <option value="aes">AES</option>
+            <option value="3des">3DES</option>
+        </select>
+
+        <!-- Encoding/Encryption and Decoding/Decryption Text Areas Side by Side -->
+        <div class="text-areas">
+            <div class="text-area-container">
+                <h2>Encode/Encrypt</h2>
+                <textarea id="inputText" placeholder="Enter text to encode or encrypt..."></textarea>
+                <button onclick="encodeText()">Encode/Encrypt</button>
+            </div>
+            <div class="text-area-container">
+                <h2>Decode/Decrypt</h2>
+                <textarea id="inputTextDecode" placeholder="Enter text to decode or decrypt..."></textarea>
+                <button onclick="decodeText()">Decode/Decrypt</button>
+            </div>
+        </div>
+
+        <!-- Key Input for Methods That Require a Key -->
+        <input id="key" type="text" placeholder="Enter key (for DES, AES, or 3DES)" />
+        
+        <!-- Result Section -->
+        <h2>Result</h2>
+        <textarea id="outputText" placeholder="Result will appear here..." readonly></textarea>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

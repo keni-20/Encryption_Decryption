@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px; /* Adjust max-width to fit content better */
+    text-align: left; /* Left-align text and elements */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+select, input[type="text"], button {
+    width: 100%;
+    max-width: 350px; /* Max-width to make sure it doesn’t stretch too far */
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+    max-width: 350px; /* Limit width of text areas */
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: #f9f9f9;
+    resize: none;
+    height: 120px; /* Set a proper height for text areas */
+    border: 1px solid #ccc;
+}
+
+select:focus, input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button {
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004099;
+}
+
+/* Side-by-side layout for Encoding/Decrypting text areas */
+.text-areas {
+    display: flex;
+    justify-content: flex-start; /* Left-align the text areas */
+    gap: 20px;
+    flex-wrap: wrap; /* Allows responsiveness on smaller screens */
+    margin-bottom: 20px;
+}
+
+.text-area-container {
+    width: 48%; /* Take up nearly half of the space */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#outputText {
+    background: #e1f7d5; /* Light green for output area */
+    border: 1px solid #99cc66; /* Green border for output */
+    max-width: 350px; /* Match output area size */
+    margin-top: 20px;
+    height: 120px; /* Proper height for the result area */
+    resize: none;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    /* On smaller screens, stack the text areas */
+    .text-areas {
+        flex-direction: column;
+    }
+    .text-area-container {
+        width: 100%;
+    }
+}
